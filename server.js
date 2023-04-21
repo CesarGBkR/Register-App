@@ -12,10 +12,11 @@ const path = require('path');
 // app.use(express.json({extended: false}));
 // app.get("/", (req, res) => res.sendFile("D:/RepositoriosOwn/RegistroGastosMERN/react-app/src/public/index.html"));
 
+app.use(express.json({ extended: false }));
 app.use(express.static(path.join(__dirname, 'register/src')));
 
 app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'register/src/pages', 'index.html'));
+    res.sendFile(path.join(__dirname, 'register/src/pages'));
 });
 
 app.use("/api/register", register);
